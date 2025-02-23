@@ -34,4 +34,28 @@ public class StudentService {
         }
         return students.get(index);
     }
+
+    public  void addStudent(Student stud){
+        students.add(stud);
+    }
+
+    public void editStudent(Student student) {
+        int index=0;
+        for (int i=0;i<students.size();i++){
+            if(students.get(i).getRollNo()==student.getRollNo()){
+                index=i;
+            }
+        }
+         students.set(index,student);
+    }
+
+    public void deleteStudent(int rolno) {
+        int index=0;
+        for (int i=0;i<students.size();i++){
+            if(students.get(i).getRollNo()==rolno){
+                index=i;
+            }
+        }
+        students.remove(index);
+    }
 }
